@@ -1,8 +1,3 @@
-"""
-models/state.py — Typed state for the entire debate session.
-Uses LangGraph 1.0's TypedDict-based state with Annotated reducers.
-"""
-
 from __future__ import annotations
 from typing import Annotated
 from langgraph.graph.message import add_messages

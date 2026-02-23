@@ -1,10 +1,3 @@
-"""
-╔══════════════════════════════════════════════════════════════════╗
-║          SOCRATIC DEBATE COACH AGENT — main.py                  ║
-║   LangChain 1.0 + LangGraph 1.0 | Python 3.10+                  ║
-╚══════════════════════════════════════════════════════════════════╝
-"""
-
 import asyncio
 from dotenv import load_dotenv
 

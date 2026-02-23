@@ -51,19 +51,18 @@ def _get_llm(temperature: float = 0.3):
     model_string = os.getenv("LANGCHAIN_MODEL", "openai:gpt-4o")
     provider, model_name = model_string.split(":", 1)
 
-    # If a custom base URL is set (e.g. Azure, proxy, or org gateway), use
-    # ChatOpenAI directly so we can pass openai_api_base explicitly.
+    
     if provider == "openai":
-        base_url = os.getenv("OPENAI_BASE_URL")          # None if not set → uses default
+        base_url = os.getenv("OPENAI_BASE_URL")      
         api_key  = os.getenv("OPENAI_API_KEY")
         return ChatOpenAI(
             model=model_name,
             temperature=temperature,
             openai_api_key=api_key,
-            openai_api_base=base_url,   # ignored when None
+            openai_api_base=base_url, 
         )
 
-    # All other providers go through the generic init_chat_model path
+    
     return init_chat_model(model=model_name, model_provider=provider, temperature=temperature)
 
 
